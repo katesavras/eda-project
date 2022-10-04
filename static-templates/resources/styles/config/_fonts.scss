@@ -1,0 +1,18 @@
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url($fonts + "/#{$url}.ttf") format('truetype');
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@include font-face("Bebas Neue Bold", "Bebas Neue Bold", 700);
+@include font-face("Red Hat Display", "Red Hat Display", 400);
+@include font-face("Red Hat Display", "Red Hat Display", 500);
+@include font-face("Red Hat Display", "Red Hat Display", 700);
+
+$font-primary: 'Bebas Neue Bold';
+$font-secondary: 'Red Hat Display', sans-serif;
+

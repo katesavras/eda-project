@@ -1,0 +1,65 @@
+.portfolio-slider {
+  position: relative;
+
+  &__nav {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    width: 85px;
+    height: 100%;
+    background-color: rgb(54, 53, 53, 0.3);
+
+    i {
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    &.prev {
+      left: 0;
+
+      i {
+        left: 20px;
+      }
+    }
+
+    &.next {
+      right: 0;
+
+      i {
+        right: 20px;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto !important;
+    margin: 0;
+  }
+
+  .swiper-pagination-bullet {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #7300ff;
+  }
+
+  .swiper-button-disabled {
+    i {
+      filter: blur(2px);
+    }
+  }
+}

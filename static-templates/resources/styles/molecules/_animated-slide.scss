@@ -1,0 +1,59 @@
+.animated-slide {
+  $self: &;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out;
+  will-change: opacity;
+
+  &-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__continer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    height: max-content;
+    transition: all 1s ease-in-out;
+
+    //&:after{
+    //  display: block;
+    //  content: "";
+    //  width: 100%;
+    //}
+
+    &:not(:first-child):not(:last-child) {
+      width: 56.3%;
+
+      //&:after{
+      //  padding-bottom: 72.06573%;
+      //}
+    }
+
+    &:first-child {
+      width: 33.6%;
+
+      //&:after{
+      //  padding-bottom: 129.13386%;
+      //}
+    }
+
+    &:last-child {
+      width: 40.3%;
+
+      //&:after{
+      //  padding-bottom: 75.40984%;
+      //}
+    }
+  }
+}

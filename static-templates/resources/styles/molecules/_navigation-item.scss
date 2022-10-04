@@ -1,0 +1,55 @@
+.navigation-item {
+  $self: &;
+  display: flex;
+  position: relative;
+
+  &:not(:first-child) {
+    flex-grow: 1;
+  }
+
+  &:first-child:after{
+    display: none;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 53px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 80px);
+    background-color: rgba($athens-gray, 0.2);
+    width: 1px;
+  }
+
+  &-active {
+    #{ $self }__indicator{
+      opacity: 1;
+      outline: 1px solid $athens-gray;
+    }
+  }
+
+  &__indicator {
+    width: 26px;
+    height: 26px;
+    background-color: $athens-gray;
+    background-clip: padding-box;
+    border: 9px solid transparent;
+    opacity: 0.3;
+    transition: all .3s;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    display: block;
+  }
+
+
+
+  &:first-child {
+
+  }
+
+
+  &:last-child {
+
+  }
+}

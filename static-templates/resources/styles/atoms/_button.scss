@@ -1,0 +1,132 @@
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+
+  resize: none;
+  background: none;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-primary {
+  @include body-bold;
+  padding: 22px 30px;
+  background-color: $coral;
+  color: $white;
+
+  //.icon-plus {
+  //  margin-right: 16px;
+  //  width: 18px;
+  //  height: 18px;
+  //  display: inline-block;
+  //  background-repeat: no-repeat;
+  //  background-size: contain;
+  //  background-position: center;
+  //  background-image: url($icons + "/plus.svg");
+  //
+  //  @include media-breakpoint-down(xl) {
+  //    margin-right: 12px;
+  //    width: 13.5px;
+  //    height: 13.5px;
+  //  }
+  //}
+
+  @include media-breakpoint-down(lg) {
+    padding: 13px 40px;
+  }
+
+  &:active {
+    background-color: $dark-coral;
+
+    //&:hover {
+    //  .icon-plus {
+    //    background-image: url($icons + "/plus-white.svg");
+    //  }
+    //}
+  }
+
+  &:hover {
+    background-color: $hover-coral;
+
+    //&:hover {
+    //  .icon-plus {
+    //    background-image: url($icons + "/plus-white.svg");
+    //  }
+    //}
+  }
+
+  &_disabled {
+    background-color: $stroke-gray;
+    //.icon-plus {
+    //  background-image: url($icons + "/plus-gray.svg");
+    //}
+  }
+}
+
+.btn-secondary {
+  @include body-bold;
+  padding: 21px 29px;
+  background-color: $white;
+  border: 1px solid $coral;
+  color: $white;
+
+  @include media-breakpoint-down(lg) {
+    padding: 12px 39px;
+  }
+
+  &:active {
+    background-color: rgba(243, 98, 75, 0.1);
+  }
+
+  &:hover {
+    background-color: rgba(243, 98, 75, 0.04);
+  }
+
+  &_disabled {
+    background-color: $white;
+    color: $dark-gray;
+    border: 1px solid $stroke-gray;
+  }
+}
+
+.btn-sm {
+  @include body-bold;
+  padding: 10px 19px;
+  background-color: $white;
+  border: 1px solid $dark-blue;
+  color: $dark-blue;
+
+  @include media-breakpoint-down(lg) {
+    padding: 12px 19px;
+  }
+
+  &:active {
+    background-color: rgba(23, 35, 80, 0.15);
+  }
+
+  &:hover {
+    background-color: rgba(23, 35, 80, 0.05);
+  }
+
+  &_disabled {
+    background-color: $white;
+    color: rgba($dark-gray, 0.7);
+    border: 1px solid $stroke-gray;
+  }
+}

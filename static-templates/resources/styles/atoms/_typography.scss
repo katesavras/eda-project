@@ -1,0 +1,242 @@
+@mixin typography-1 {
+  font-family: $font-primary;
+  font-style: normal;
+  color: $dark-blue;
+}
+
+@mixin typography-2 {
+  font-family: $font-secondary;
+  font-style: normal;
+  color: $dark-blue;
+}
+
+
+@mixin headline-hero {
+  @include typography-1;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 96px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 46px;
+    line-height: 48px;
+  }
+}
+
+@mixin headline-1 {
+  @include typography-1;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 36px;
+    line-height: 38px;
+    letter-spacing: 0.07em;
+    text-transform: capitalize;
+  }
+}
+
+@mixin headline-2 {
+  @include typography-1;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 62px;
+  letter-spacing: 0.07em;
+  text-transform: capitalize;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+@mixin headline-3 {
+  @include typography-2;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@mixin headline-4 {
+  @include typography-2;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@mixin body-large {
+  @include typography-2;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin body-bold {
+  @include typography-2;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@mixin body-small {
+  @include typography-2;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@mixin subheader {
+  @include typography-2;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+}
+
+@mixin subheader-small {
+  @include typography-2;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+@mixin extra-small {
+  @include typography-2;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+
+  @include media-breakpoint-down(lg) {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@mixin body-extra-small {
+  @include media-breakpoint-down(lg) {
+    @include typography-2;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@mixin tiny {
+  @include media-breakpoint-down(lg) {
+    @include typography-2;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@mixin body-link {
+  @include typography-2;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.12em;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}
+
+.headline-hero {
+  @include headline-hero;
+}
+
+h1,
+.headline-1 {
+  @include headline-1;
+}
+
+h2,
+.headline-2 {
+  @include headline-2;
+}
+
+h3,
+.headline-3 {
+  @include headline-3;
+}
+
+h4,
+.headline-4 {
+  @include headline-4;
+}
+
+.body-large{
+  @include body-large;
+}
+
+.body-bold {
+  @include body-bold;
+}
+
+.body-small {
+  @include body-small;
+}
+
+.subheader{
+  @include subheader;
+}
+
+.subheader-small {
+  @include subheader-small;
+}
+
+.extra-small {
+  @include extra-small;
+}
+
+.body-extra-small {
+  @include body-extra-small;
+}
+
+.tiny {
+  @include tiny;
+}
+
+.body-link{
+  @include body-link;
+}

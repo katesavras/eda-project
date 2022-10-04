@@ -1,0 +1,24 @@
+.programs {
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  &__title {
+    margin-bottom: 67px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+    }
+  }
+}

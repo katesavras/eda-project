@@ -1,0 +1,36 @@
+a {
+  text-decoration: none;
+}
+
+.link {
+  &-arrow {
+    @include body-link;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: $dark-blue;
+
+    &:active {
+      color: $light-blue;
+
+      .icon-arrow-link {
+        background-image: url($icons + '/arrow-link-active.svg');
+      }
+    }
+
+    .icon-arrow-link{
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url($icons + '/arrow-link.svg');
+      margin-left: 6px;
+
+      @include media-breakpoint-down(lg) {
+        margin-left: 4px;
+        width: 12px;
+        height: 10px;
+      }
+    }
+  }
+}

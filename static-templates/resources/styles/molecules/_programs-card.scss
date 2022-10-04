@@ -1,0 +1,99 @@
+.programs-card {
+  position: relative;
+  height: inherit;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+
+    &_green {
+      background-color: $green;
+    }
+
+    &_turquoise {
+      background-color: $turquoise;
+    }
+
+    &_blue {
+      background-color: $baby-blue;
+    }
+
+    &_red {
+      background-color: $red;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    border: 1px solid $gray;
+    padding: 39px 59px 39px 49px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: $light-gray;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translate(-20px, -20px);
+
+      @include media-breakpoint-down(lg) {
+        transform: unset;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      min-height: 324px;
+      padding: 19px 18px 21.5px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+  }
+
+  &__img {
+    margin-top: 11px;
+    margin-right: 40.6px;
+
+    @include media-breakpoint-down(lg) {
+      margin: 0 0 6.6px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    color: rgba($dark-blue, 0.8);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 12.5px;
+    }
+  }
+
+  &__link{
+    @include media-breakpoint-down(lg) {
+      margin-left: 3px;
+    }
+  }
+}
+
+

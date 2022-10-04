@@ -1,0 +1,33 @@
+.description-item {
+  $self: &;
+  position: absolute;
+  top: 38%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out;
+  will-change: opacity;
+
+  &:first-child {
+    top: unset;
+    bottom: 45px;
+  }
+
+  &:last-child {
+    top: 9px;
+  }
+
+  &-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  h3 {
+    color: $athens-gray;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: $athens-gray;
+  }
+}

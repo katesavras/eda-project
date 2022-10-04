@@ -1,1 +1,1 @@
-# template
+# wp-template

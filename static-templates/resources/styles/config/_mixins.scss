@@ -1,0 +1,16 @@
+@mixin flex-dir-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-dir-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin grid($columns, $cg, $rg: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-column-gap: $cg;
+  grid-row-gap: $rg;
+}

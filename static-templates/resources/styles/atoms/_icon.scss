@@ -1,0 +1,51 @@
+@mixin icon-props($image-url, $width, $height) {
+  display: inline-block;
+  width: #{$width}px;
+  height: #{$height}px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url($image-url);
+}
+
+@mixin icon($name, $image-url, $width, $height, $pseudo: false) {
+  @if $pseudo {
+    content: "";
+    @include icon-props($image-url, $width, $height);
+  } @else {
+    .icon-#{$name} {
+      @include icon-props($image-url, $width, $height);
+    }
+  }
+}
+
+@include icon("arrow-link", $icons + "/arrow-link.svg", 12, 12);
+@include icon("arrow-link-active", $icons + "/arrow-link-active.svg", 12, 12);
+@include icon("hand-shake", $icons + "/hand-shake.svg", 112, 114);
+@include icon("mortarboard", $icons + "/mortarboard.svg", 112, 114);
+@include icon("bank", $icons + "/bank.svg", 112, 114);
+@include icon("search-bg", $icons + "/search-bg.svg", 112, 114);
+@include icon("search", $icons + "/search.svg", 25, 25);
+@include icon("person", $icons + "/person.svg", 28, 28);
+@include icon("arrow-down", $icons + "/arrow-down.svg", 14, 9);
+@include icon("logo", $icons + "/logo.svg", 96, 40);
+@include icon("star", $icons + "/star.svg", 38, 37);
+@include icon("ellipse", $icons + "/ellipse.svg", 367, 213);
+@include icon("logo-footer", $icons + "/logo-footer.svg", 100, 42);
+@include icon("facebook", $icons + "/facebook.svg", 30, 30);
+@include icon("twitter", $icons + "/twitter.svg", 30, 30);
+@include icon("instagram", $icons + "/instagram.svg", 30, 30);
+@include icon("youtube", $icons + "/youtube.svg", 30, 30);
+
+
+@include media-breakpoint-down(lg) {
+  .icon-arrow-link{
+    width: 12px;
+    height: 10px;
+  }
+
+  .icon-bank, .icon-search-bg, .icon-hand-shake, .icon-mortarboard{
+    width: 67px;
+    height: 68px;
+  }
+}

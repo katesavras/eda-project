@@ -1,0 +1,150 @@
+.animated-slider {
+  position: relative;
+
+  //&__slides > * {
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //}
+
+  &__slides {
+    $self: &;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 8.3% - 30px - 35px);
+    height: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 67px;
+      left: 73px;
+      width: 62%;
+      height: 72%;
+      border: 1.5px solid $baby-blue;
+      z-index: 0;
+    }
+
+    &-first>*>*>:first-child{
+        top: 0;
+        left: 0;
+    }
+
+    &-first>*>*>:not(:first-child):not(:last-child){
+      top: 18%;
+      left: 37%;
+    }
+
+    &-first>*>*>:last-child{
+      top: 66%;
+      left: 22%;
+    }
+
+    &-second>*>*>:first-child{
+      top: 0;
+      left: 35%;
+    }
+
+    &-second>*>*>:not(:first-child):not(:last-child){
+      top: 52%;
+      left: 25%;
+    }
+
+    &-second>*>*>:last-child{
+      top: 14%;
+      left: -9%;
+    }
+
+    &-third>*>*>:first-child{
+      top: 47%;
+      left: 13%;
+    }
+
+    &-third>*>*>:not(:first-child):not(:last-child){
+      top: 0;
+      left: -9.5%;
+    }
+
+    &-third>*>*>:last-child{
+      top: 33%;
+      left: 49%;
+    }
+  }
+
+  //&__slide{
+  //  &:first-child>*{
+  //    &>:first-child{
+  //      top: 0;
+  //      left: 0;
+  //    }
+  //
+  //    &>:not(:first-child):not(:last-child){
+  //      top: 18%;
+  //      left: 37%;
+  //    }
+  //
+  //    &>:last-child{
+  //      top: 66%;
+  //      left: 22%;
+  //    }
+  //  }
+  //
+  //  &:not(:first-child):not(:last-child)>*{
+  //    &>:first-child{
+  //      top: 0;
+  //      left: 35%;
+  //    }
+  //
+  //    &>:not(:first-child):not(:last-child){
+  //      top: 52%;
+  //      left: 25%;
+  //    }
+  //
+  //    &>:last-child{
+  //      top: 14%;
+  //      left: -9%;
+  //    }
+  //  }
+  //
+  //  &:last-child>*{
+  //    &>:first-child{
+  //      top: 47%;
+  //      left: 13%;
+  //    }
+  //
+  //    &>:not(:first-child):not(:last-child){
+  //      top: 0;
+  //      left: -9.5%;
+  //    }
+  //
+  //    &>:last-child{
+  //      top: 33%;
+  //      left: 49%;
+  //    }
+  //  }
+  //}
+
+  &__description {
+    position: absolute;
+    right: 50px;
+    height: 100%;
+    bottom: 0;
+    width: 30%;
+  }
+
+
+  &__navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 26px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}

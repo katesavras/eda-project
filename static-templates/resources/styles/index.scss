@@ -1,0 +1,35 @@
+/* Config */
+@import "config/bootstrap";
+@import "/node_modules/bootstrap/scss/bootstrap-grid";
+@import '/node_modules/swiper/swiper.scss';
+@import '/node_modules/swiper/modules/effect-fade/effect-fade.scss';
+@import '/node_modules/swiper/modules/navigation/navigation.scss';
+@import '/node_modules/swiper/modules/pagination/pagination.scss';
+@import "config/paths";
+@import "config/colors";
+@import "config/fonts";
+@import "config/gutters";
+@import "config/general";
+@import "config/mixins";
+
+/* Helpers */
+
+/* Atoms */
+@import "atoms/typography";
+@import "atoms/icon";
+@import "atoms/button";
+@import "atoms/link";
+@import "atoms/aspect-ratio";
+@import "atoms/image";
+
+/* Molecules */
+@import "molecules/programs-card.scss";
+@import "molecules/animated-slide.scss";
+@import "molecules/description-item.scss";
+@import "molecules/navigation-item.scss";
+
+/* Organisms */
+
+@import "organisms/programs.scss";
+@import "organisms/banner-slider.scss";
+@import "organisms/animated-slider.scss";
