@@ -20,6 +20,11 @@
     height: calc(100% - 80px);
     background-color: rgba($athens-gray, 0.2);
     width: 1px;
+
+    @include media-breakpoint-down(lg) {
+      top: 39px;
+      height: calc(100% - 52px);
+    }
   }
 
   &-active {

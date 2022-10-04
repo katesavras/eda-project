@@ -8,13 +8,32 @@
   transition: opacity .3s ease-in-out;
   will-change: opacity;
 
+
+  @include media-breakpoint-down(lg) {
+    top: unset;
+    bottom: 0;
+    left: 0;
+  }
+
   &:first-child {
     top: unset;
     bottom: 45px;
+
+    @include media-breakpoint-down(lg) {
+      top: unset;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   &:last-child {
     top: 9px;
+
+    @include media-breakpoint-down(lg) {
+      top: unset;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   &-active {
@@ -25,9 +44,18 @@
   h3 {
     color: $athens-gray;
     margin-bottom: 16px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 5px;
+    }
   }
 
   p {
     color: $athens-gray;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 }

@@ -1,14 +1,6 @@
 .animated-slider {
   position: relative;
 
-  //&__slides > * {
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //}
-
   &__slides {
     $self: &;
     position: absolute;
@@ -17,15 +9,29 @@
     width: calc(100% - 8.3% - 30px - 35px);
     height: 100%;
 
+    @include media-breakpoint-down(lg) {
+      position: relative;
+      width: calc(100% - 16.5% - 12px);
+      height: 0;
+      padding-bottom: 57.075%;
+    }
+
     &:before {
       content: "";
       position: absolute;
-      top: 67px;
-      left: 73px;
+      top: 20px;
+      left: 20px;
       width: 62%;
       height: 72%;
       border: 1.5px solid $baby-blue;
       z-index: 0;
+
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        left: 20px;
+      }
     }
 
     &-first>*>*>:first-child{
@@ -36,6 +42,11 @@
     &-first>*>*>:not(:first-child):not(:last-child){
       top: 18%;
       left: 37%;
+
+      @include media-breakpoint-down(lg) {
+        top: 0;
+        left: 0;
+      }
     }
 
     &-first>*>*>:last-child{
@@ -51,6 +62,11 @@
     &-second>*>*>:not(:first-child):not(:last-child){
       top: 52%;
       left: 25%;
+
+      @include media-breakpoint-down(lg) {
+        top: 0;
+        left: 0;
+      }
     }
 
     &-second>*>*>:last-child{
@@ -66,6 +82,11 @@
     &-third>*>*>:not(:first-child):not(:last-child){
       top: 0;
       left: -9.5%;
+
+      @include media-breakpoint-down(lg) {
+        top: 0;
+        left: 0;
+      }
     }
 
     &-third>*>*>:last-child{
@@ -74,67 +95,24 @@
     }
   }
 
-  //&__slide{
-  //  &:first-child>*{
-  //    &>:first-child{
-  //      top: 0;
-  //      left: 0;
-  //    }
-  //
-  //    &>:not(:first-child):not(:last-child){
-  //      top: 18%;
-  //      left: 37%;
-  //    }
-  //
-  //    &>:last-child{
-  //      top: 66%;
-  //      left: 22%;
-  //    }
-  //  }
-  //
-  //  &:not(:first-child):not(:last-child)>*{
-  //    &>:first-child{
-  //      top: 0;
-  //      left: 35%;
-  //    }
-  //
-  //    &>:not(:first-child):not(:last-child){
-  //      top: 52%;
-  //      left: 25%;
-  //    }
-  //
-  //    &>:last-child{
-  //      top: 14%;
-  //      left: -9%;
-  //    }
-  //  }
-  //
-  //  &:last-child>*{
-  //    &>:first-child{
-  //      top: 47%;
-  //      left: 13%;
-  //    }
-  //
-  //    &>:not(:first-child):not(:last-child){
-  //      top: 0;
-  //      left: -9.5%;
-  //    }
-  //
-  //    &>:last-child{
-  //      top: 33%;
-  //      left: 49%;
-  //    }
-  //  }
-  //}
-
   &__description {
     position: absolute;
     right: 50px;
     height: 100%;
     bottom: 0;
     width: 30%;
-  }
 
+    @include media-breakpoint-down(xxl) {
+      right: 20px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      right: unset;
+      left: 20px;
+      bottom: 11px;
+      width: 80%;
+    }
+  }
 
   &__navigation {
     position: absolute;
