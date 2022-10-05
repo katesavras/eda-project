@@ -1,0 +1,162 @@
+.form {
+  padding: 113px 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: 70px 0;
+  }
+
+  &__content {
+    position: relative;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      right: -15px;
+      top: -15px;
+      width: 1px;
+      background-color: $hover-gray;
+      height: calc(100% + 30px);
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+     margin-bottom: 20px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    max-width: 80%;
+    opacity: 0.8;
+
+    @include media-breakpoint-down(lg) {
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+
+    @include media-breakpoint-down(xxl) {
+      width: 90%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    @include media-breakpoint-down(xxl) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(lg) {
+     margin-bottom: 15px;
+    }
+  }
+
+  &__input {
+    @include body-small;
+    outline: none;
+    padding: 31px 24px 15px;
+    height: 70px;
+    width: 386px;
+    background: $light-gray;
+    border: 1px solid $stroke-gray;
+
+    @include media-breakpoint-down(xxl) {
+      width: 100%;
+      max-width: 386px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      height: 48px;
+      padding: 19px 17px 7px;
+      width: 100%;
+      max-width: unset;
+    }
+
+    &:focus{
+      border: 1px solid $dark-gray;
+    }
+
+    &:focus ~ .form__label{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      top: 5px;
+      left: 24px;
+      opacity: 1;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 12px;
+        line-height: 15px;
+        top: 4px;
+        left: 17px;
+      }
+    }
+
+    &:not(:placeholder-shown)  ~ .form__label{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      top: 5px;
+      left: 24px;
+      opacity: 1;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 12px;
+        line-height: 15px;
+        top: 4px;
+        left: 17px;
+      }
+    }
+  }
+
+  &__label {
+    @include body-small;
+    color: $dark-gray;
+    position: absolute;
+    line-height: 24px;
+    pointer-events: none;
+    left: 24px;
+    top: 23px;
+    transition: 0.2s ease all;
+
+    @include media-breakpoint-down(lg) {
+      left: 17px;
+      top: 13px;
+    }
+  }
+
+
+  &__btn {
+    width: 238px;
+
+    @include media-breakpoint-down(lg) {
+      height: 48px;
+      width: 100%;
+    }
+  }
+}

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       selectors: ['.portfolio-slider'],
     },
     animatedSlider: {
-      init: () => new AnimatedSlider(),
+      init: () => new InitInstance('.animated-slider', AnimatedSlider),
       selectors: ['.animated-slider'],
     },
   };
