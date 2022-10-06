@@ -6,7 +6,7 @@ import InitInstance from './shared/init-instance';
 import IndustriesSlider from './shared/industries-slider';
 import PortfolioSlider from "./shared/portfolio-slider";
 import AnimatedSlider from "./shared/animated-slider";
-
+import TabSlider from "./shared/tab-slider";
 
 document.addEventListener("DOMContentLoaded", async () => {
   window.refs = {
@@ -40,7 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     },
     animatedSlider: {
       init: () => new InitInstance('.animated-slider', AnimatedSlider),
-      selectors: ['.animated-slider'],
+      selectors: ['.animated-slider']
+    },
+    tabSlider: {
+      init: () => new InitInstance('.tab-slider', TabSlider),
+      selectors: ['.tab-slider']
     },
   };
 

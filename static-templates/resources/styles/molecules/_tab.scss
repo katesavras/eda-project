@@ -1,0 +1,30 @@
+.tab {
+  $self: &;
+  position: relative;
+  @include body-bold;
+  width: 100%;
+  padding: 19px 30px;
+  background: $light-gray;
+  border: 1px solid $gray;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &.active {
+    background-color: $gray;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 6px;
+      height: calc(100% + 2px);
+      background-color: $baby-blue;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+   display: none;
+  }
+}

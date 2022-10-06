@@ -27,6 +27,9 @@
 @import "molecules/animated-slide.scss";
 @import "molecules/description-item.scss";
 @import "molecules/navigation-item.scss";
+@import "molecules/tab.scss";
+@import "molecules/tag.scss";
+@import "molecules/tab-slide.scss";
 
 /* Organisms */
 
@@ -34,3 +37,4 @@
 @import "organisms/banner-slider.scss";
 @import "organisms/animated-slider.scss";
 @import "organisms/form.scss";
+@import "organisms/tab-slider.scss";

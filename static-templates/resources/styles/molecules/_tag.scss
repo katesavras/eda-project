@@ -1,0 +1,27 @@
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  @include subheader;
+  padding: 3px 8px;
+  background-color: $gray;
+
+  @include media-breakpoint-down(lg) {
+    position: unset;
+    padding: 8px 12px;
+    margin-right: 10px;
+    text-wrap: none;
+    width: 72px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.active{
+    opacity: 1;
+    visibility: visible;
+    background-color: $baby-blue;
+  }
+}

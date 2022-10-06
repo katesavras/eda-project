@@ -36,6 +36,8 @@
 @include icon("twitter", $icons + "/twitter.svg", 30, 30);
 @include icon("instagram", $icons + "/instagram.svg", 30, 30);
 @include icon("youtube", $icons + "/youtube.svg", 30, 30);
+@include icon("arrow-prev", $icons + "/arrow-prev.svg", 24, 24);
+@include icon("arrow-next", $icons + "/arrow-next.svg", 24, 24);
 
 
 @include media-breakpoint-down(lg) {
