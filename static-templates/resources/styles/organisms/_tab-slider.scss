@@ -5,6 +5,10 @@
 
   &__tags-wrap {
     position: relative;
+
+    //@include media-breakpoint-down(lg) {
+    //  height: 40px;
+    //}
   }
 
   &__tags {
@@ -12,8 +16,20 @@
     height: 32px;
 
     @include media-breakpoint-down(lg) {
-      display: flex;
-      position: absolute;
+      display: inline-flex;
+      height: 40px;
+      width: calc(100% + 40px);
+      margin: 0 -20px;
+      padding: 0 20px;
+      overflow-x: auto;
+    }
+  }
+
+  &__tag {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
@@ -58,18 +74,23 @@
     opacity: 0;
     visibility: hidden;
 
-    &.active{
+    @include media-breakpoint-down(lg) {
+      padding: 8px 13px;
+      width: 160px;
+    }
+
+    &.active {
       opacity: 1;
       visibility: visible;
     }
 
-    &_prev {
+    &.prev {
       i {
         margin-right: 5px;
       }
     }
 
-    &_next {
+    &.next {
       i {
         margin-left: 5px;
       }

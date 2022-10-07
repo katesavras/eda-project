@@ -12,9 +12,9 @@
   @include media-breakpoint-down(lg) {
     position: unset;
     padding: 8px 12px;
-    margin-right: 10px;
-    text-wrap: none;
-    width: 72px;
+    white-space:nowrap;
+    width: 72px !important;
+    height: 100%;
     opacity: 1;
     visibility: visible;
   }
