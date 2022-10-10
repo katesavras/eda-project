@@ -1,3 +1,5 @@
+import Gradient from "javascript-color-gradient";
+
 class TabSlider {
     constructor(section) {
         this.section = section;
@@ -7,7 +9,6 @@ class TabSlider {
         this.navButtons = this.section.querySelectorAll('.tab-slider__btn');
         this.prevButton = this.section.querySelector('.prev');
         this.nextButton = this.section.querySelector('.next');
-        this.colors = ['#BEED60', '#AEE856', '#9EE24B', '#94D841', '#89CD37', '#7FC22D', '#6BAD19', '#60A20F'];
         this.activeSlideClass = 'active';
         this.activeItemIndex = 0;
         this.bindAction = this.bindAction.bind(this);
@@ -16,14 +17,19 @@ class TabSlider {
         this.changeSlide = this.changeSlide.bind(this);
         this.removeActiveClass = this.removeActiveClass.bind(this);
         this.setColors = this.setColors.bind(this);
+        this.updateBtnClass = this.updateBtnClass.bind(this);
         this.init();
     }
 
     setColors(index) {
         this.tabSlideItems = this.tabSlide[index].querySelectorAll('.tab-slide__item');
+        const gradientArray = new Gradient()
+            .setColorGradient('#BEED60', '#60A20F')
+            .setMidpoint(this.tabSlideItems.length)
+            .getColors();
         this.tabSlideItems.forEach((item, i) => {
-            item.style.setProperty('--main-color', this.colors[i]);
-            item.style.setProperty('--next-color', this.colors[i + 1]);
+            item.style.setProperty('--main-color', gradientArray[i]);
+            item.style.setProperty('--next-color', gradientArray[i++]);
         })
     }
 
@@ -52,15 +58,8 @@ class TabSlider {
         this.setColors(index)
     }
 
-
-    changeSlide(index, btn) {
-        this.removeActiveClass(this.activeItemIndex)
-        if (index === null) {
-            btn === "next" ? this.activeItemIndex++ : this.activeItemIndex--;
-        } else {
-            this.activeItemIndex = index;
-        }
-        if (this.activeItemIndex === this.tabItems.length - 1) {
+    updateBtnClass(index){
+        if (index === this.tabItems.length - 1) {
             this.nextButton.classList.remove(
                 this.activeSlideClass
             )
@@ -69,7 +68,7 @@ class TabSlider {
                 this.activeSlideClass
             )
         }
-        if (this.activeItemIndex === 0) {
+        if (index === 0) {
             this.prevButton.classList.remove(
                 this.activeSlideClass
             )
@@ -78,6 +77,16 @@ class TabSlider {
                 this.activeSlideClass
             )
         }
+    }
+
+    changeSlide(index, btn) {
+        this.removeActiveClass(this.activeItemIndex)
+        if (index === null) {
+            btn === "next" ? this.activeItemIndex++ : this.activeItemIndex--;
+        } else {
+            this.activeItemIndex = index;
+        }
+        this.updateBtnClass(this.activeItemIndex)
         this.setActiveSlide(this.activeItemIndex)
     }
 
@@ -112,7 +121,6 @@ class TabSlider {
             }
         });
     }
-
 
     init() {
         this.setColors(this.activeItemIndex)
