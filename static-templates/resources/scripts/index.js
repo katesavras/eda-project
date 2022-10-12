@@ -8,6 +8,7 @@ import PortfolioSlider from "./shared/portfolio-slider";
 import AnimatedSlider from "./shared/animated-slider";
 import TabSlider from "./shared/tab-slider";
 import Header from "./shared/header";
+import ImageSlider from "./shared/image-slider";
 
 document.addEventListener("DOMContentLoaded", async () => {
   window.refs = {
@@ -46,6 +47,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     tabSlider: {
       init: () => new InitInstance('.tab-slider', TabSlider),
       selectors: ['.tab-slider']
+    },
+    imageSlider: {
+      init: () => new InitInstance('.img-slider', ImageSlider),
+      selectors: ['.img-slider']
     },
     header: {
       init: () => new Header(),
