@@ -1,0 +1,46 @@
+@mixin burger-item {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $gray;
+  left: 0;
+  border-radius: 25px;
+  transition: transform .3s ease-in-out;
+  will-change: transform;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.burger-menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  padding: 0;
+  height: 20px;
+  width: 28px;
+
+  @include media-breakpoint-down(lg) {
+    display: flex;
+  }
+
+  span {
+    position: relative;
+    background-color: $gray;
+    width: 100%;
+    border-radius: 25px;
+    height: 2px;
+    transition: all .1s;
+
+    &:before {
+      @include burger-item;
+      top: -9px;
+    }
+
+    &:after {
+      @include burger-item;
+      bottom: -9px;
+    }
+  }
+}

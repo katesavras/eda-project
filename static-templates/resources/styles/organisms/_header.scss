@@ -1,0 +1,242 @@
+.header {
+  $self: &;
+  background-color: $dark-blue;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(238, 242, 246, .2);
+
+  @include media-breakpoint-down(xl) {
+    border-bottom: 1px solid rgba(238, 242, 246, .2);
+  }
+
+  @include media-breakpoint-down(lg) {
+    &.open {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $light-gray;
+        z-index: 100;
+      }
+
+      .header-menu {
+        &__item-with-children {
+          display: block;
+
+          &:after {
+            top: 28px;
+          }
+        }
+      }
+
+      .burger-menu {
+        z-index: 110;
+
+        span {
+          background-color: transparent;
+
+          &:before {
+            background-color: $dark-blue;
+            transform: rotate(-45deg);
+            top: 50%;
+          }
+
+          &:after {
+            background-color: $dark-blue;
+            transform: rotate(45deg);
+            top: 50%;
+            bottom: unset;
+          }
+        }
+      }
+
+      #{ $self }__content {
+        transform: translateX(100%);
+      }
+
+      #{ $self }__logo {
+        background-image: url($images + '/logo-blue.svg');
+        z-index: 110;
+        margin-right: 0;
+        margin-left: auto;
+      }
+
+      #{ $self }__mobile-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      #{ $self }__mobile-donate {
+        @include body-bold;
+        font-size: 16px;
+        line-height: 22px;
+        display: inline-block;
+        background-color: transparent;
+        text-align: center;
+        padding: 13px;
+        width: 162px;
+        color: $dark-blue;
+        border: 1px solid $dark-blue;
+        cursor: pointer;
+      }
+
+      #{ $self }__right {
+        width: 100%;
+      }
+
+      #{ $self }__member {
+        display: none;
+      }
+
+      #{ $self }__search {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    padding: 20px 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(xl) {
+      padding: 20px 5px;
+    }
+  }
+
+  &__logo {
+    margin-right: 70px;
+    width: 95px;
+    height: 48px;
+    background-image: url($images + '/logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    transition: background-image .3s;
+
+    @include media-breakpoint-down(xxl) {
+      margin-right: 11px;
+    }
+
+    @include media-breakpoint-down(xl) {
+      width: 80px;
+      height: 35px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 67px;
+      height: 28px;
+      margin-right: 53px;
+    }
+  }
+
+  &__content {
+    @include media-breakpoint-down(lg) {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background-color: $light-gray;
+      z-index: 100;
+      transition: transform .3s ease-in-out;
+      will-change: transform;
+      padding: 100px 20px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__search {
+    cursor: pointer;
+    margin-right: 30px;
+    padding-top: 3px;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-right: 24px;
+    }
+  }
+
+  &__user {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 30px;
+    padding-top: 3px;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__mobile-btn {
+    display: none;
+  }
+
+  &__donate {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid $gray;
+    background-color: transparent;
+    @include body-bold;
+    text-align: center;
+    color: $gray;
+    padding: 11px 20px;
+    width: 162px;
+
+    @include media-breakpoint-down(xl) {
+      max-width: 100px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__member {
+    cursor: pointer;
+    @include body-bold;
+    border: 1px solid $gray;
+    background-color: transparent;
+    text-align: center;
+    text-wrap: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $gray;
+    padding: 5px 10px;
+    width: 115px;
+    display: none;
+
+    @include media-breakpoint-down(lg) {
+      display: inline-block;
+      padding: 5px 7px;
+      width: auto;
+      text-align: center;
+    }
+  }
+}

@@ -30,6 +30,10 @@
 @import "molecules/tab.scss";
 @import "molecules/tag.scss";
 @import "molecules/tab-slide.scss";
+@import "molecules/header-menu.scss";
+@import "molecules/header-submenu.scss";
+@import "molecules/burger-menu.scss";
+@import "molecules/submenu";
 
 /* Organisms */
 
@@ -38,3 +42,4 @@
 @import "organisms/animated-slider.scss";
 @import "organisms/form.scss";
 @import "organisms/tab-slider.scss";
+@import "organisms/header.scss";

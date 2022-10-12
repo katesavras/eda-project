@@ -28,6 +28,8 @@
 @include icon("search", $icons + "/search.svg", 25, 25);
 @include icon("person", $icons + "/person.svg", 28, 28);
 @include icon("arrow-down", $icons + "/arrow-down.svg", 14, 9);
+@include icon("arrow-down-blue", $icons + "/arrow-down-blue.svg", 14, 9);
+@include icon("arrow-down-dark-blue", $icons + "/arrow-down-dark-blue.svg", 14, 9);
 @include icon("logo", $icons + "/logo.svg", 96, 40);
 @include icon("star", $icons + "/star.svg", 38, 37);
 @include icon("ellipse", $icons + "/ellipse.svg", 367, 213);
@@ -39,6 +41,17 @@
 @include icon("arrow-prev", $icons + "/arrow-prev.svg", 24, 24);
 @include icon("arrow-next", $icons + "/arrow-next.svg", 24, 24);
 
+@include media-breakpoint-down(xl) {
+  .icon-person{
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-search{
+    width: 20px;
+    height: 20px;
+  }
+}
 
 @include media-breakpoint-down(lg) {
   .icon-arrow-link{
@@ -64,5 +77,10 @@
   .icon-arrow-next{
     width: 12px;
     height: 10px;
+  }
+
+  .icon-search{
+    width: 24px;
+    height: 24px;
   }
 }
