@@ -79,7 +79,7 @@ class Header {
     resizeWindow() {
         window.addEventListener("resize", (e) => {
             let windowSize = Helper.getWindowSize();
-            if ((this.header.classList.contains(this.openClass) || this.submenu.classList.contains(this.openClass))  && windowSize.width >= 992) {
+            if ((this.header.classList.contains(this.openClass) || this.submenu.classList.contains(this.openClass)) && windowSize.width >= 992) {
                 this.header.classList.remove(this.openClass)
                 this.submenu.classList.remove(this.openClass)
                 this.body.style.overflow = "auto"
