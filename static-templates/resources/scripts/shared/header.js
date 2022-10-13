@@ -1,4 +1,5 @@
 import Helper from "./helper";
+import {debounce} from 'debounce';
 
 class Header {
     constructor() {
@@ -36,10 +37,12 @@ class Header {
 
 
     openSubmenu(item, index) {
-        item.addEventListener("click", (e) => {
-            this.submenu.classList.add(this.openClass);
-            this.activeSubItemIndex = index;
-            this.submenuItems[this.activeSubItemIndex].classList.add(this.activeClass)
+        item.addEventListener("click", () => {
+            if (this.header.classList.contains(this.openClass)) {
+                this.submenu.classList.add(this.openClass);
+                this.activeSubItemIndex = index;
+                this.submenuItems[this.activeSubItemIndex].classList.add(this.activeClass)
+            }
         });
     }
 
@@ -77,17 +80,19 @@ class Header {
     }
 
     resizeWindow() {
-        window.addEventListener("resize", (e) => {
-            let windowSize = Helper.getWindowSize();
-            if ((this.header.classList.contains(this.openClass) || this.submenu.classList.contains(this.openClass)) && windowSize.width >= 992) {
-                this.header.classList.remove(this.openClass)
-                this.submenu.classList.remove(this.openClass)
-                this.body.style.overflow = "auto"
-                this.menuItems[this.activeItemIndex].classList.remove(
-                    this.activeClass
-                );
-            }
-        });
+        window.addEventListener("resize",
+            debounce(() => {
+                let windowSize = Helper.getWindowSize();
+                if ((this.header.classList.contains(this.openClass) || this.submenu.classList.contains(this.openClass)) && windowSize.width >= 992) {
+                    this.header.classList.remove(this.openClass)
+                    this.submenu.classList.remove(this.openClass)
+                    this.body.style.overflow = "auto"
+                    this.menuItems[this.activeItemIndex].classList.remove(
+                        this.activeClass
+                    );
+                }
+            }, 20)
+        );
     }
 
     init() {

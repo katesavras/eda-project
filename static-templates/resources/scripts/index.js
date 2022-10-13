@@ -8,7 +8,8 @@ import PortfolioSlider from "./shared/portfolio-slider";
 import AnimatedSlider from "./shared/animated-slider";
 import TabSlider from "./shared/tab-slider";
 import Header from "./shared/header";
-import ImageSlider from "./shared/image-slider";
+// import ImageSlider from "./shared/image-slider";
+import ImgSlider from "./shared/img-slider";
 
 document.addEventListener("DOMContentLoaded", async () => {
   window.refs = {
@@ -20,10 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       init: () => new Accordion(),
       selectors: ["*"],
     },
-    banner: {
-      init: () => new Banner(),
-      selectors: [".banner"],
-    },
+    // banner: {
+    //   init: () => new Banner(),
+    //   selectors: [".banner"],
+    // },
     developmentAccordion: {
       init: () => new DevelopmentAccordion(),
       selectors: [".development-item"],
@@ -40,6 +41,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       init: () => new PortfolioSlider(),
       selectors: ['.portfolio-slider'],
     },
+    imgSlider: {
+      init: () => new ImgSlider(),
+      selectors: ['.img-slider'],
+    },
     animatedSlider: {
       init: () => new InitInstance('.animated-slider', AnimatedSlider),
       selectors: ['.animated-slider']
@@ -48,10 +53,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       init: () => new InitInstance('.tab-slider', TabSlider),
       selectors: ['.tab-slider']
     },
-    imageSlider: {
-      init: () => new InitInstance('.img-slider', ImageSlider),
-      selectors: ['.img-slider']
-    },
+    // imageSlider: {
+    //   init: () => new InitInstance('.img-slider', ImageSlider),
+    //   selectors: ['.img-slider']
+    // },
     header: {
       init: () => new Header(),
       selectors: [".header"],
